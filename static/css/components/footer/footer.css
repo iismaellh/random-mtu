@@ -6,6 +6,10 @@
     padding-left: 0;
 }
 
+#footer {
+    background: #242943;
+}
+
     #footer .copyright li {
         border-left: solid 1px rgba(212, 212, 255, 0.1);
         color: rgba(244, 244, 255, 0.2);
