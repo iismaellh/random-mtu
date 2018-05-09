@@ -29,7 +29,6 @@ class Index extends Component {
         <Cover page="/about" heading="Hello there stranger!">This is just a random site for a random mtu. :)</Cover>
         <div id="main">
           <SectionOne page="/about"></SectionOne>
-          <SectionTwo></SectionTwo> 
         </div>
         <Contact></Contact>
         <Footer></Footer>
