@@ -3,11 +3,16 @@
 import React, { Component } from 'react';
 import Destruct from '../../destruct/Destruct';
 import Link from 'next/link';
+import Head from 'next/head';
 
 class Contact extends Component {
     render() {
         return (
             <Destruct>
+                <Head>
+                    <link rel="stylesheet" href="/static/css/components/cover/footer.css" key="footer" />
+                </Head>
+
                 <footer id="footer">
                     <div className="inner">
                         <ul className="icons">

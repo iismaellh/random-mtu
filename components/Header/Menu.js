@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import Destruct from '../../destruct/Destruct';
+import Head from 'next/head';
 
 class Header extends Component {
     render() {
         return (
             <Destruct>
+                <Head>
+                    <link rel="stylesheet" href="/static/css/components/header/menu.css" key="menu" />
+                </Head>
+
                 <nav id="menu">
                     <ul className="links">
                         <li><a href="index.html">Home</a></li>
