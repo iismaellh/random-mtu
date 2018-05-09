@@ -1,0 +1,29 @@
+{
+  "name": "randomtu",
+  "version": "1.0.0",
+  "description": "A random site for a random mtu",
+  "main": "index.js",
+  "author": "Ismael Herrera",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randomtu/random-mtu"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "prestart": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isfunction": "^3.0.9",
+    "next": "^6.0.0",
+    "next-page-transition": "^1.0.8",
+    "react": "^16.3.2",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.3.2",
+    "react-overdrive": "0.0.9"
+  }
+}
