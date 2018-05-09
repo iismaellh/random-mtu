@@ -1,35 +1,29 @@
 import w from 'next-page-transition';
 
-const x = -100;
-const y = 0;
-const duration = 600;
+const duration = 400;
 const wrapper = w({
     duration: duration,           //transition duration
     containerProps: {        //props for container
       style: {                
-        position: 'relative'  
+        position: 'relative',
+        opacity: 1 
       }
     },
     frameProps: {            //props for frame
       style: {
-        position: 'absolute',
-        width: '100%',
-        opacity: 0,
-        // transform: `translate(${x}vw, ${y}vh) skewY(20deg)`,
-        transition: `${duration}ms ease-out`,
+        position: `relative`,
+        width: `100%`,
+        opacity: 1,
+        transition: `${duration}ms ease-in`,
+        filter: `blur(10px)`,
+        transform: `translate(-100vw, 0vh)`
       }
     },
-    // transitionStyles: {      //transition styles
-    //   exited: { opacity: 0,  transform: `translate(${x}vw, ${y}vh)  skewY(20deg)`},
-    //   entering: { opacity: 0, transform: `translate(${x}vw, ${y}vh)  skewY(10deg)` },
-    //   entered: { opacity: 1, transform: `translate(0px, 0px) skewY(0deg)` },
-    //   exiting: { opacity: 0,  transform: `translate(${x}vw, ${y}vh)  skewY(10deg)`},
-    // },
     transitionStyles: {      //transition styles
-      exited: { opacity: 0, transform: `translate(${x}vw, ${y}vh)`},
-      entering: { opacity: 0, transform: `translate(${x}vw, ${y}vh)`},
-      entered: { opacity: 1, transform: `translate(0px, 0px)` },
-      exiting: { opacity: 0,  transform: `translate(${x}vw, ${y}vh)`},
+      exited: { opacity: 1, filter: `blur(5px)`, transform: `translate(0vw, 0vh)` },
+      entering: { opacity: 1, filter: `blur(10px)`, transform: `translate(-100vw, 0vh)` },
+      entered: { opacity: 1, filter: `blur(0px)`, transform: `translate(0vw, 0vh)` },
+      exiting: { opacity: 1, filter: `blue(10px)`, transform: `translate(100vw, 0vh)` }
     }
   })
 

@@ -7,7 +7,13 @@ class Header extends Component {
         return (
             <Destruct>
                 <Head>
-                    <link rel="stylesheet" href="/static/css/components/header/header.css" key="header" />
+                    <link rel="stylesheet" href="/static/css/components/header/head.css" key="helmet" />
+                    <script src="static/js/jquery.min.js"></script>
+                    <script src="static/js/jquery.scrolly.min.js"></script>
+                    <script src="static/js/jquery.scrollex.min.js"></script>
+                    <script src="static/js/skel.min.js"></script>
+                    <script src="static/js/util.js"></script>
+                    <script src="static/js/main.js"></script>
                 </Head>
 
                 <header id="header" className="alt">

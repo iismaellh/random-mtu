@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <Destruct>
                 <Head>
-                    <link rel="stylesheet" href="/static/css/components/header/menu.css" key="menu" />
+                    <link rel="stylesheet" href="/static/css/components/menu/menu.css" key="menu" />
                 </Head>
 
                 <nav id="menu">

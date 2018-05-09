@@ -1,5 +1,5 @@
-import App, {Container} from 'next/app';
 import React from 'react';
+import App, {Container} from 'next/app';
 import Head from 'next/head';
 
 class RandomApp extends App {
@@ -15,10 +15,15 @@ class RandomApp extends App {
 
   render () {
     const {Component, pageProps} = this.props
-    //console.log(this.props);
+  
     return (
         <Container>
-            <Component {...pageProps} />
+            <Head>
+              <title key="title">RANDOM by randomtu</title>
+              <meta charset="utf-8" key="charset" />
+              <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" key="viewport" />
+          </Head>
+          <Component {...pageProps} />
         </Container>
     );
   }

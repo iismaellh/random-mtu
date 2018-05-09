@@ -26,7 +26,7 @@ class About extends Component {
       <div id="wrapper">
         <Header></Header>
         <Menu></Menu>
-        <Cover page="/" heading="Wanna know more about me?">This is the about page.</Cover>
+        <Cover page="/" heading="We make product happen.">This is the about page.</Cover>
         <div id="main">
           <SectionOne page="/"></SectionOne>
           <SectionTwo></SectionTwo> 
@@ -38,4 +38,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default wrapper(About);

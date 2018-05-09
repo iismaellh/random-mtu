@@ -10,7 +10,7 @@ class Contact extends Component {
         return (
             <Destruct>
                 <Head>
-                    <link rel="stylesheet" href="/static/css/components/cover/footer.css" key="footer" />
+                    <link rel="stylesheet" href="/static/css/components/footer/footer.css" key="footer" />
                 </Head>
 
                 <footer id="footer">
