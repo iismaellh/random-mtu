@@ -38,4 +38,4 @@ class About extends Component {
   }
 }
 
-export default wrapper(About);
+export default About;

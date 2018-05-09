@@ -38,4 +38,4 @@ class Index extends Component {
   }
 }
 
-export default wrapper(Index);
+export default Index;

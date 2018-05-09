@@ -13,11 +13,13 @@
     "build": "next build",
     "prestart": "next build",
     "start": "next start -p $PORT",
+    "local": "next start",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
   "dependencies": {
+    "@zeit/next-css": "^0.1.5",
     "lodash.isfunction": "^3.0.9",
     "next": "^6.0.0",
     "next-page-transition": "^1.0.8",

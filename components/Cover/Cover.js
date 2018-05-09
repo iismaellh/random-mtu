@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Overdrive from 'react-overdrive';
 import Destruct from '../../destruct/Destruct';
 import Link from 'next/link';
+import Head from 'next/head';
 
 class Cover extends Component {
     constructor(props) {
@@ -11,6 +11,10 @@ class Cover extends Component {
     render() {
         return (
             <Destruct>
+                <Head>
+                    <link rel="stylesheet" href="/static/css/components/cover/cover.css" key="cover" />
+                </Head>
+                
                 <section id="banner" className="major">
                     <div className="inner">
                         <header className="major">
