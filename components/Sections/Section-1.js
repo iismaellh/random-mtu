@@ -10,10 +10,12 @@ class SectionOne extends Component {
 
     render() {
         let posts = this.props.posts.map(post => {
+            const featuredImage = post._embedded['wp:featuredmedia'] !== undefined ? post._embedded['wp:featuredmedia'][0].source_url : '';
+            
             return (
                 <article key={post.id}>
                     <span className="image">
-                        <img src="/static/images/pic01.jpg" alt="" />
+                        <img src={featuredImage} alt="" />
                     </span>
                     <header className="major">
                         <h3><a className="link">{ReactHtmlParser(post.title.rendered)}</a></h3>

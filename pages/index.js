@@ -15,8 +15,9 @@ import { Collapse } from 'react-bootstrap';
 
 class Index extends Component {
   static async getInitialProps({query}) {
-    const res = await fetch( "http://randomtu.com/server/wp-json/wp/v2/posts" );
+    const res = await fetch( "http://randomtu.com/server/wp-json/wp/v2/posts?_embed" );
     const json = await res.json();
+    console.log(json);
     return { posts: json };
   }
 
