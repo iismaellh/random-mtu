@@ -2,17 +2,39 @@ import React, { Component } from 'react';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import Link from 'next/link';
 import Destruct from '../../destruct/Destruct';
+import fetch from "isomorphic-fetch";
 
 class SectionOne extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            posts: [],
+            isLoading: false
+        };
     }
 
-    render() {
-        let posts = '';
+    fetchPosts() {
+        this.setState({ isLoading: true });
 
-        if(this.props.posts) {
-            posts = this.props.posts.map(post => {
+        fetch('https://randomtu.com/server/wp-json/wp/v2/posts?_embed')
+            .then(response => response.json())
+            .then(data => this.setState({ posts: data, isLoading: false }));
+    }
+
+    componentDidMount() {
+        this.fetchPosts();
+    }  
+
+    render() {
+        let { posts, isLoading } = this.state;
+
+        if (isLoading) {
+            return <p>Loading ...</p>;
+        }
+
+        if(this.state.posts) {
+            posts = this.state.posts.map(post => {
                 const image = post._embedded['wp:featuredmedia'] !== undefined ? post._embedded['wp:featuredmedia'][0].source_url : '';
                 return (
                     <article key={post.id}>
