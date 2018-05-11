@@ -12,7 +12,7 @@ import wrapper from '../components/Wrapper/Wrapper';
 import { Collapse } from 'react-bootstrap';
 
 class About extends Component {
-  static getInitialProps(context) {
+  static async getInitialProps(context) {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve({ id: "about" });
@@ -22,6 +22,7 @@ class About extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div id="wrapper">
         <Header></Header>
@@ -38,4 +39,4 @@ class About extends Component {
   }
 }
 
-export default wrapper(About);
+export default About;

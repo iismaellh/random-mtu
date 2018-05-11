@@ -1,5 +1,7 @@
 // pages/index.js
 import React, { Component } from 'react';
+import axios from 'axios';
+import fetch from "isomorphic-fetch";
 import Header from '../components/Header/Header';
 import Menu from '../components/Header/Menu';
 import Cover from '../components/Cover/Cover';
@@ -12,13 +14,10 @@ import wrapper from '../components/Wrapper/Wrapper';
 import { Collapse } from 'react-bootstrap';
 
 class Index extends Component {
-  static getInitialProps(context) {
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ id: "index" });
-      }, 1000);
-    });
-    return promise;
+  static async getInitialProps({query}) {
+    const res = await fetch( "http://randomtu.com/server/wp-json/wp/v2/posts" );
+    const json = await res.json();
+    return { posts: json };
   }
 
   render() {
@@ -28,7 +27,7 @@ class Index extends Component {
         <Menu></Menu>
         <Cover page="/about" heading="Hello there stranger!">This is just a random site for a random mtu. :)</Cover>
         <div id="main">
-          <SectionOne page="/about"></SectionOne>
+          <SectionOne page="/about" posts={this.props.posts}></SectionOne>
         </div>
         <Contact></Contact>
         <Footer></Footer>
@@ -37,4 +36,4 @@ class Index extends Component {
   }
 }
 
-export default wrapper(Index);
+export default Index;
