@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import Link from 'next/link';
 import Destruct from '../../destruct/Destruct';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 class SectionOne extends Component {
     constructor(props) {
@@ -9,21 +9,24 @@ class SectionOne extends Component {
     }
 
     render() {
-        let posts = this.props.posts.map(post => {
-            const featuredImage = post._embedded['wp:featuredmedia'] !== undefined ? post._embedded['wp:featuredmedia'][0].source_url : '';
-            
-            return (
-                <article key={post.id}>
-                    <span className="image">
-                        <img src={featuredImage} alt="" />
-                    </span>
-                    <header className="major">
-                        <h3><a className="link">{ReactHtmlParser(post.title.rendered)}</a></h3>
-                        {ReactHtmlParser(post.excerpt.rendered)}
-                    </header>
-                </article>
-            )
-        });
+        let posts = '';
+
+        if(this.props.posts) {
+            posts = this.props.posts.map(post => {
+                const image = post._embedded['wp:featuredmedia'] !== undefined ? post._embedded['wp:featuredmedia'][0].source_url : '';
+                return (
+                    <article key={post.id}>
+                        <span className="image">
+                            <img src={image} alt="" />
+                        </span>
+                        <header className="major">
+                            <h3><a className="link">{ReactHtmlParser(post.title.rendered)}</a></h3>
+                            {ReactHtmlParser(post.excerpt.rendered)}
+                        </header>
+                    </article>
+                )
+            });
+        }
 
         return (
             <Destruct> 
