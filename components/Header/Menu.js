@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import Destruct from '../../destruct/Destruct';
+import Link from 'next/link';
 import Head from 'next/head';
 
 class Header extends Component {
+    constructor(props) {
+        super(props)
+    }
+    
     render() {
         return (
             <Destruct>
@@ -12,10 +17,11 @@ class Header extends Component {
 
                 <nav id="menu">
                     <ul className="links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="landing.html">Landing</a></li>
-                        <li><a href="generic.html">Generic</a></li>
-                        <li><a href="elements.html">Elements</a></li>
+                        <li><Link href="/"><a>Home</a></Link></li>
+                        <li><Link href="/work"><a>Work</a></Link></li>
+                        <li><Link href="/about"><a>About</a></Link></li>
+                        <li><Link href="/blog"><a>Blog?</a></Link></li>
+                        <li><Link href="/contact"><a>Contact</a></Link></li>
                     </ul>
                     <ul className="actions vertical">
                         <li><a href="#" className="button special fit">Get Started</a></li>

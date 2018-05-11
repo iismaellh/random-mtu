@@ -23,7 +23,7 @@ class Cover extends Component {
                         <div className="content">
                             <p>{this.props.children}</p>
                             <ul className="actions">
-                                <li><Link href={this.props.page}><a className="button next link">Get Started</a></Link></li>
+                                <li><Link href={this.props.page}><a className="button">Get Started</a></Link></li>
                             </ul>
                         </div>
                     </div>

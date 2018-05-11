@@ -1,7 +1,5 @@
-// pages/index.js
+// pages/about.js
 import React, { Component } from 'react';
-import axios from 'axios';
-import fetch from "isomorphic-fetch";
 import Header from '../components/Header/Header';
 import Menu from '../components/Header/Menu';
 import Cover from '../components/Cover/Cover';
@@ -13,21 +11,26 @@ import Footer from '../components/Footer/Footer';
 import wrapper from '../components/Wrapper/Wrapper';
 import { Collapse } from 'react-bootstrap';
 
-class Index extends Component {
-  static async getInitialProps({query}) {
-    const res = await fetch( "https://randomtu.com/server/wp-json/wp/v2/posts?_embed" );
-    const json = await res.json();
-    return { posts: json };
+class About extends Component {
+  static async getInitialProps(context) {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ id: "about" });
+      }, 1000);
+    });
+    return promise;
   }
 
   render() {
+    console.log(this.props);
     return (
       <div id="wrapper">
         <Header></Header>
         <Menu></Menu>
-        <Cover page="/about" heading="Hello there stranger!">This is just a random site for a random mtu. :)</Cover>
+        <Cover page="/" heading="We make product happen.">This is the about page.</Cover>
         <div id="main">
-          <SectionOne page="/about" posts={this.props.posts}></SectionOne>
+          <SectionOne page="/"></SectionOne>
+          <SectionTwo></SectionTwo> 
         </div>
         <Contact></Contact>
         <Footer></Footer>
@@ -36,4 +39,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default About;
