@@ -17,11 +17,11 @@ class Header extends Component {
 
                 <nav id="menu">
                     <ul className="links">
-                        <li><Link href="/"><a>Home</a></Link></li>
-                        <li><Link href="/work"><a>Work</a></Link></li>
-                        <li><Link href="/about"><a>About</a></Link></li>
-                        <li><Link href="/blog"><a>Blog?</a></Link></li>
-                        <li><Link href="/contact"><a>Contact</a></Link></li>
+                        <li><Link prefetch href="/"><a>Home</a></Link></li>
+                        <li><Link prefetch href="/work"><a>Work</a></Link></li>
+                        <li><Link prefetch href="/about"><a>About</a></Link></li>
+                        <li><Link prefetch href="/blog"><a>Blog?</a></Link></li>
+                        <li><Link prefetch href="/contact"><a>Contact</a></Link></li>
                     </ul>
                     <ul className="actions vertical">
                         <li><a href="#" className="button special fit">Get Started</a></li>
