@@ -14,7 +14,7 @@ class SectionOne extends Component {
         };
     }
 
-    fetchPosts() {
+    componentFetchPosts() {
         this.setState({ isLoading: true });
 
         fetch('https://randomtu.com/server/wp-json/wp/v2/posts?_embed')
@@ -23,7 +23,7 @@ class SectionOne extends Component {
     }
 
     componentDidMount() {
-        this.fetchPosts();
+        this.componentFetchPosts();
     }  
 
     render() {
