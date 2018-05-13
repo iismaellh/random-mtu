@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import Destruct from '../../destruct/Destruct';
-import withFetching from '../../hoc/withFetching';
+import Destruct from '../../destruct/Destruct'
 import fetch from 'isomorphic-fetch';
 
 class Posts extends Component {

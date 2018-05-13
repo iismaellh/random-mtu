@@ -7,14 +7,14 @@ const withFetching = (url) => (Comp) =>
       super(props);
 
       this.state = {
-        data: {},
-        isLoading: false,
+        data: [],
+        loading: false,
         error: null,
       };
     }
 
     componentDidMount() {
-      this.setState({ isLoading: true });
+      this.setState({ loading: true });
 
       fetch(url)
         .then(response => {
@@ -24,8 +24,8 @@ const withFetching = (url) => (Comp) =>
             throw new Error('Something went wrong ...');
           }
         })
-        .then(data => this.setState({ data, isLoading: false }))
-        .catch(error => this.setState({ error, isLoading: false }));
+        .then(data => this.setState({ data, loading: false }))
+        .catch(error => this.setState({ error, loading: false }));
     }
 
     render() {

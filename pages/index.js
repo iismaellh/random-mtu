@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 import Menu from '../components/Header/Menu';
 import Cover from '../components/Cover/Cover';
 import Section from '../components/Sections/Section';
-import Posts from '../components/Posts/Posts';
+import Posts from '../components/Posts/PostsV2';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
