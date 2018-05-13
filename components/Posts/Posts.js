@@ -10,14 +10,14 @@ class Posts extends Component {
 
         this.state = {
             data: [],
-            isLoading: false,
+            loading: false,
             error: null,
         };
     } 
 
-    componentFetch(url) {
-        this.setState({ isLoading: true });
-        
+    componentWillFetch(url) {
+        this.setState({ loading: true });
+
         fetch(url)
             .then(response => {
                 if (response.ok) {
@@ -26,16 +26,12 @@ class Posts extends Component {
                     throw new Error('Something went wrong ...');
                 }
             })
-            .then(data => this.setState({ data, isLoading: false }))
-            .catch(error => this.setState({ error, isLoading: false }));
+            .then(data => this.setState({ data, loading: false }))
+            .catch(error => this.setState({ error, loading: false }));
     }
 
-    componentDidMount() {
-        this.componentFetch(`http://www.randomtu.com/server/wp-json/wp/v2/posts?_embed`);
-      }
-
-    render() {
-        const { data, isLoading, error } = this.state;
+    componentDidFetch() {
+        const { data, loading, error } = this.state;
 
         let posts = data || [];
 
@@ -43,7 +39,7 @@ class Posts extends Component {
           return <p>{error.message}</p>;
         }
     
-        if (isLoading) {
+        if (loading) {
           return <p>Loading ...</p>;
         }
 
@@ -63,6 +59,16 @@ class Posts extends Component {
                 )
             });
         }
+        
+        return posts;
+    }
+
+    componentDidMount() {
+        this.componentWillFetch(`http://www.randomtu.com/server/wp-json/wp/v2/posts?_embed`);
+    }
+
+    render() {
+        let posts = this.componentDidFetch();
 
         return (
             <Destruct>
