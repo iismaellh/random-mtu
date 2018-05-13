@@ -17,9 +17,9 @@ class Header extends Component {
                 </Head>
 
                 <header id="header" className="alt">
-                    <a href="index.html" className="logo"><strong>RANDOM</strong> <span>by mtu</span></a>
+                    <a href="index.html" className="logo"><strong>RANDOM</strong> <span>mtu</span></a>
                     <nav>
-                        <a href="#menu">Menu</a>
+                        <a href="#menu"><span>Menu</span></a>
                     </nav>
 				</header>
             </Destruct>
