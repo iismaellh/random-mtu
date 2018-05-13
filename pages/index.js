@@ -5,8 +5,8 @@ import fetch from "isomorphic-fetch";
 import Header from '../components/Header/Header';
 import Menu from '../components/Header/Menu';
 import Cover from '../components/Cover/Cover';
-import SectionOne from '../components/Sections/Section-1';
-import SectionTwo from '../components/Sections/Section-2';
+import Section from '../components/Sections/Section';
+import Posts from '../components/Posts/Posts';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
@@ -14,10 +14,6 @@ import wrapper from '../components/Wrapper/Wrapper';
 import { Collapse } from 'react-bootstrap';
 
 class Index extends Component {
-  static async getInitialProps({query}) {
-    
-  }
-
   render() {
     return (
       <div id="wrapper">
@@ -25,7 +21,9 @@ class Index extends Component {
         <Menu></Menu>
         <Cover page="/about" heading="Hello there stranger!">This is just a random site for a random mtu. :)</Cover>
         <div id="main">
-          <SectionOne page="/about" posts={this.props.posts}></SectionOne>
+          <Section>
+            <Posts></Posts>
+          </Section>
         </div>
         <Contact></Contact>
         <Footer></Footer>

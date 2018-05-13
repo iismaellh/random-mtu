@@ -1,4 +1,4 @@
-const withLoading = (Component) => (props, output) =>
+const withLoading = (Component, output) => (props) =>
   props.isLoading
     ? output
     : <Component { ...props } />

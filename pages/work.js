@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header/Header';
 import Menu from '../components/Header/Menu';
 import Cover from '../components/Cover/Cover';
-import SectionOne from '../components/Sections/Section-1';
+import Section from '../components/Sections/Section';
 import SectionTwo from '../components/Sections/Section-2';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
@@ -29,7 +29,7 @@ class About extends Component {
         <Menu></Menu>
         <Cover page="/" heading="We make product happen.">This is the about page.</Cover>
         <div id="main">
-          <SectionOne page="/"></SectionOne>
+          <Section page="/"></Section>
           <SectionTwo></SectionTwo> 
         </div>
         <Contact></Contact>
