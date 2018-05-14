@@ -19,7 +19,7 @@ class Index extends Component {
       <div id="wrapper">
         <Header></Header>
         <Menu></Menu>
-        <Cover page="/about" heading="Hello there stranger!">This is just a random site for a random mtu. :)</Cover>
+        <Cover page="/about" heading="We make sense of the randomness.">Stop throwing dices and bring order to the process, coherence to the obscure, and linearity to the complexity.</Cover>
         <div id="main">
           <Section>
             <Posts></Posts>

@@ -15,7 +15,7 @@ class Cover extends Component {
                     <link rel="stylesheet" href="/static/css/components/cover/cover.css" key="cover" />
                 </Head>
                 
-                <section id="banner" className="major">
+                <section id="banner" className="style1 major">
                     <div className="inner">
                         <header className="major">
                             <h1>{this.props.heading}</h1>

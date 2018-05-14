@@ -39,4 +39,4 @@ const Posts = ({ data, loading, error }) => {
     );
 }
 
-export default withFetching(`http://www.randomtu.com/server/wp-json/wp/v2/posts?_embed`)(Posts);
+export default withFetching(`http://www.randomtu.com/server/wp-json/wp/v2/posts?_embed&per_page=4`)(Posts);

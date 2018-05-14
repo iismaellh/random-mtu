@@ -16,7 +16,7 @@ class Header extends Component {
                     <script src="static/js/main.js"></script>
                 </Head>
 
-                <header id="header" className="alt">
+                <header id="header" className="alt style1">
                     <a href="index.html" className="logo"><strong>RANDOM</strong> <span>mtu</span></a>
                     <nav>
                         <a href="#menu"><span>Menu</span></a>

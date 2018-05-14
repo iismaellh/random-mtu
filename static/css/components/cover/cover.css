@@ -101,9 +101,9 @@
             }
 
             #banner > .inner .content p {
-                font-size: 0.7em;
+                font-size: 1.2em;
                 font-weight: 600;
-                letter-spacing: 0.25em;
+                letter-spacing: 0.1em;
                 text-transform: uppercase;
             }
 
@@ -118,7 +118,7 @@
         }
 
     #banner.style1:after {
-        background-color: #6fc3df;
+        background-color: #1d1d1d;
     }
 
     #banner.style2:after {
