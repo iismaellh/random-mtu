@@ -9,7 +9,7 @@ const withFetching = (url) => (Comp) =>
       this.state = {
         data: [],
         loading: false,
-        error: null,
+        error: null
       };
     }
 
